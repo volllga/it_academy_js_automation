@@ -12,19 +12,6 @@
 максимально 7
 
 
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-
-eval "$(ssh-agent -s)"
-
-ssh-add ~/.ssh/id_ed25519
-
-create repo
-
-git clone "your repo address"
-
-nano README.md
-
-
 #Домашнее задание - Занятие 4
 
 1. Установить nodejs LTS версия;
@@ -41,14 +28,3 @@ nano README.md
     Максимальная оценка 9 баллов
 
 
-##Done
-1. >> node -v
-   > npm -v
-   
-2. >> npm init
-   > 
-3. Локальная установка используется в npm по умолчанию, 
-   то есть достаточно не использовать флаг --global. 
-   Пакет будет установлен в каталог node_modules родительского каталога.
-
-   >> npm install fs-extra
