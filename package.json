@@ -1,7 +1,7 @@
 {
   "name": "it_academy_js_automation",
   "version": "1.0.0",
-  "description": "1. Установить git;\r 2. Создать аккаунт на github;\r 3. Создать и Привязать ssh ключ к аккаунту;\r 4. Создать новый репозиторий;\r 5. создать новую ветку\r 6. добавить файл в проект и изменить readme.md;\r 7. сохранить, запушить в гит;\r 8. сделать пул реквест в мастер/мейн бранч\r 9. прислать ссылку на пул реквест ответом на это письмо, ничего не меняя в теме письма, ничего туда не добавляя, просто ответом на это письмо!\r максимально 7",
+  "description": "Study project JS automation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/volllga/it_academy_js_automation/issues"
   },
-  "homepage": "https://github.com/volllga/it_academy_js_automation#readme"
+  "homepage": "https://github.com/volllga/it_academy_js_automation#readme",
+  "dependencies": {
+    "fs-extra": "^10.1.0"
+  }
 }
