@@ -55,7 +55,8 @@ console.log(arr2);
 
 
 // 5. Дан массив [1, 2, 3, 4, 5]. Cделайте из него массив [1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].
-let arr3 = [1, 2, 3, 4, 5];
+//OPTION 5.1
+const arr3 = [1, 2, 3, 4, 5];
 function insertElementIntoArray(arr, index, arrInsert) {
   for(let element of arrInsert) {
     arr.splice(index, 0, element);
@@ -69,6 +70,24 @@ insertElementIntoArray(arr3, 8, ['e']);
 console.log(arr3);
 
 
+//OPTION 5.2 Not the best solution: doesn't work with numbers > 9.
+const arr5 = [1, 2, 3, 4, 5];
+const str5 = arr5.join('')[0] + 'ab'
+            + arr5.join('').slice(1, 4) + 'c'
+            + arr5.join('').slice(-1) + 'e';
+let newArr5 = [];
+
+for(let i = 0; i < str5.length; i++) {
+  if('1234567890'.includes(str5[i])) {
+    newArr5.push(Number(str5[i]))
+  } else {
+    newArr5.push(str5[i]);
+  }
+}
+console.log(newArr5);
+
+
 // 6. Дан массив [3, 4, 1, 2, 7]. Отсортируйте его.
 let arr4 = [3, 4, 1, 2, 7];
-console.log(arr4.sort((a, b) => a - b));
+console.log(arr4.sort((a, b) => a - b)); // [1, 2, 3, 4, 7]
+console.log(arr4.sort((a, b) => b - a)); // [ 7, 4, 3, 2, 1 ]
