@@ -14,3 +14,4 @@
 #/dir/	Игнорировать каталог /dir и все его содержимое
 /.idea
 /node_modules
+package-lock.json
