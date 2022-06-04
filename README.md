@@ -28,3 +28,15 @@
     Максимальная оценка 9 баллов
 
 
+
+=======
+git checkout -b lesson3
+
+git add .
+
+git commit -m "smth"
+
+git push
+
+nano README.md
+
