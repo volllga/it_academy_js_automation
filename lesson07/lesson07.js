@@ -15,7 +15,6 @@ function startGame(player1, player2) {
     console.log(`${count} die roll: 
                             ${player1} has ${result1} points and the sum is ${sumPlayer1}
                             ${player2} has ${result2} points and the sum is ${sumPlayer2}`);
-
   }
 
   if(sumPlayer1 > sumPlayer2) {
@@ -31,7 +30,6 @@ console.log(startGame('Nik', 'Vik'));
 
 
 //2) Подсчитать как много Пятниц 13-го было с 01/01/2000 до сегодня.
-
 function getCountDays (year, month, date) {
   let today = new Date();
   let yearFinish;
@@ -52,6 +50,7 @@ function getCountDays (year, month, date) {
       count++;
     }
   }
+
   return console.log(`${count} time(s) was/were in this period Friday 13th`);
 }
 
@@ -68,6 +67,7 @@ getCountDays(2000,2,13);
 function splitNumber(number, parts) {
   let remainder = 0;
   let result = [];
+
   while (parts - 1 > 0) {
     let part = Math.floor(Math.random() * (number - remainder)); // получаем целое рандомное число
     result.push(part);
@@ -75,6 +75,7 @@ function splitNumber(number, parts) {
     parts--;
   }
   result.push(number - result.reduce((a, b) => a + b, 0));
+
   return console.log(`${number} has parts: ${result.join(', ')}`);
 }
 splitNumber(15, 3);
@@ -92,7 +93,8 @@ function splitNumber2(number, parts) {
     parts--;
   }
   result.push(Number((number - result.reduce((a, b) => a + b, 0)).toFixed(2))); // нужно округлить до двух знаков
-  return result
+
+  return result;
   // return `${number} has parts: ${result.join(', ')}`; // it is return without tests
 }
 let number = 15;
