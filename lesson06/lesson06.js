@@ -2,7 +2,7 @@
 // Если это так - выведите 'да', в противном случае выведите 'нет'.
 const str = '287854';
 
-let first = str.slice(0, str.length / 2)
+let first = str.slice(0, str.length / 2)  // получим индекс 3, он не включается в возвращаемый массив
                 .split('')
                 .reduce((a, b) => Number(a) + Number(b));
 
@@ -24,9 +24,23 @@ let n = 1000;
 let num = 0;
 while(n > 50) {
   n = n / 2;
-  num += 1
+  num += 1;
 }
 console.log(`Получилось число ${n} за ${num} итераций.`); //Получилось число 31.25 за 5 итераций.
+
+
+//Option 2.1. Function implementation
+function divideNumber(num, limit) {
+  let count = 0;
+  let result = num;
+  while(result > limit) {
+    result = result / 2;
+    count += 1;
+  }
+  return `Получилось число ${result} за ${count} итераций.`; //Получилось число 31.25 за 5 итераций.
+}
+
+console.log(divideNumber(1000, 50))
 
 
 // 3. Дан массив arr. Найдите среднее арифметическое его элементов.
