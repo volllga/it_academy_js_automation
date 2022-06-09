@@ -54,7 +54,7 @@ function getCountDays (year, month, date) {
   return console.log(`${count} time(s) was/were Friday 13th in this period.`);
 }
 
-getCountDays(2000,2,13);
+getCountDays(2000,1,1);
 
 
 //3) Напишите код который будет разбивать число на заданное количество рандомных чисел,
