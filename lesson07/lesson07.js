@@ -5,7 +5,7 @@ function startGame(player1, player2) {
   let sumPlayer1 = 0;
   let sumPlayer2 = 0;
 
-  while(count < 6) {
+  while(count < 3) {
     let result1 = Math.floor(Math.random() * 6 + 1);
     let result2 = Math.floor(Math.random() * 6 + 1);
     sumPlayer1 += result1;
@@ -51,7 +51,7 @@ function getCountDays (year, month, date) {
     }
   }
 
-  return console.log(`${count} time(s) was/were in this period Friday 13th`);
+  return console.log(`${count} time(s) was/were Friday 13th in this period.`);
 }
 
 getCountDays(2000,2,13);
@@ -60,10 +60,10 @@ getCountDays(2000,2,13);
 //3) Напишите код который будет разбивать число на заданное количество рандомных чисел,
 // сумма которых будет равна изначальному числу.
 // Пример: разбить 15 на 3 части (сумма четырех чисел будет равна 15) (4,6,5)
-// а) числа изначальное число целое, числа разбивки - целые (4,6,5)
+// а) изначальное число целое, числа разбивки - целые (4,6,5)
 // б) числа разбивки дробные с 2 знаками после запятой (4.55, 5.20, 5.25)
 
-// а) числа изначальное число целое, числа разбивки - целые (4,6,5)
+// а) изначальное число целое, числа разбивки - целые (4,6,5)
 function splitNumber(number, parts) {
   let remainder = 0;
   let result = [];
@@ -81,7 +81,7 @@ function splitNumber(number, parts) {
 splitNumber(15, 3);
 
 
-// б) числа разбивки дробные с 2 знаками после запятой (4.55, 5.20, 5.25)
+// б) изначальное число целое, числа разбивки дробные с 2 знаками после запятой (4.55, 5.20, 5.25)
 function splitNumber2(number, parts) {
   let remainder = 0;
   let result = [];
