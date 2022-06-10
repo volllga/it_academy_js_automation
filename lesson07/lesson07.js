@@ -30,10 +30,11 @@ console.log(startGame('Nik', 'Vik'));
 
 
 //2) Подсчитать как много Пятниц 13-го было с 01/01/2000 до сегодня.
-function getCountDays (year, month, date) {
+function getCountDays (year) {
   let today = new Date();
   let monthFinish;
 
+// проверим, было ли 13 число в этом месяце
   if(today.getDate() > 13) {
     monthFinish = today.getMonth(); // если прошел
   } else {
@@ -59,7 +60,7 @@ function getCountDays (year, month, date) {
   return console.log(`${count} times were Friday 13th in this period.`);
 }
 
-getCountDays(2000, 1, 1);
+getCountDays(2000);
 
 
 //3) Напишите код который будет разбивать число на заданное количество рандомных чисел,
@@ -99,7 +100,7 @@ function splitNumber2(number, parts) {
   }
   result.push(Number((number - result.reduce((a, b) => a + b, 0)).toFixed(2))); // нужно округлить до двух знаков
 
-  return result;
+  return result; // возвращаем массив, чтобы проверить тестами (смотри ниже)
   // return `${number} has parts: ${result.join(', ')}`; // it is return without tests
 }
 let number = 15;
