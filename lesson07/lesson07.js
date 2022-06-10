@@ -32,29 +32,34 @@ console.log(startGame('Nik', 'Vik'));
 //2) Подсчитать как много Пятниц 13-го было с 01/01/2000 до сегодня.
 function getCountDays (year, month, date) {
   let today = new Date();
-  let yearFinish;
+  let monthFinish;
 
-  // проверим, прошел ли нужный день в этом году или нет
-  if(today.getMonth() > month - 1||    // месяц - индекс, февраль с индексом 1
-    today.getMonth() === month - 1 && today.getDate() > date) {
-    yearFinish = today.getFullYear() // если прошел
+  if(today.getDate() > 13) {
+    monthFinish = today.getMonth(); // если прошел
   } else {
-    yearFinish = today.getFullYear() - 1; // если такой даты не было
+    monthFinish = today.getMonth() - 1; // если такой даты не было
   }
 
   let count = 0;
-  while (yearFinish >= year) {
-    let day = new Date(year, month - 1, date) //new Date(year, monthIndex, day)
-    year += 1;
-    if(day.getDay() === 5) { // пятница - 5
-      count++;
+  while (today.getFullYear() >= year) { // итерации по годам, включая этот год
+    let countOfMonth = 0;
+    while (countOfMonth < 12) { // итерации по месяцам
+      if (countOfMonth > monthFinish && today.getFullYear() === year) {
+        break; // прерываем цикл, на месяце текущего года
+      }
+      let day = new Date(year, countOfMonth, 13) //new Date(year, monthIndex, day)
+      if(day.getDay() === 5) { // пятница - 5
+        count++;
+      }
+      countOfMonth += 1;
     }
+    year += 1;
   }
 
-  return console.log(`${count} time(s) was/were Friday 13th in this period.`);
+  return console.log(`${count} times were Friday 13th in this period.`);
 }
 
-getCountDays(2000,1,1);
+getCountDays(2000, 1, 1);
 
 
 //3) Напишите код который будет разбивать число на заданное количество рандомных чисел,
