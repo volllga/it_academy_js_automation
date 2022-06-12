@@ -1,0 +1,22 @@
+{
+  "name": "it_academy_js_automation",
+  "version": "1.0.0",
+  "description": "Study project JS automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volllga/it_academy_js_automation.git"
+  },
+  "author": "Volha Lukashevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/volllga/it_academy_js_automation/issues"
+  },
+  "homepage": "https://github.com/volllga/it_academy_js_automation#readme",
+  "dependencies": {
+    "fs-extra": "^10.1.0"
+  }
+}
