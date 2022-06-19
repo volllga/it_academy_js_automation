@@ -75,7 +75,7 @@ function splitNumber(number, parts) {
   let result = [];
 
   while (parts - 1 > 0) {
-    let part = Math.floor(Math.random() * (number - remainder)); // получаем целое рандомное число
+    let part = Math.floor(Math.random() * (number / parts) + 1); // получаем целое рандомное число
     result.push(part);
     remainder = number - part;
     parts--;
@@ -84,7 +84,7 @@ function splitNumber(number, parts) {
 
   return console.log(`${number} has parts: ${result.join(', ')}`);
 }
-splitNumber(15, 3);
+splitNumber(100, 10);
 
 
 // б) изначальное число целое, числа разбивки дробные с 2 знаками после запятой (4.55, 5.20, 5.25)
@@ -92,7 +92,7 @@ function splitNumber2(number, parts) {
   let remainder = 0;
   let result = [];
   while (parts - 1 > 0) {
-    let part = Math.random() * number - remainder;
+    let part = Math.random() * (number / parts) + 1;
     part = Number(part.toFixed(2)); // получаем дробное рандомное число с двумя знаками после запятой
     result.push(part);
     remainder = number - part;
@@ -103,8 +103,8 @@ function splitNumber2(number, parts) {
   return result; // возвращаем массив, чтобы проверить тестами (смотри ниже)
   // return `${number} has parts: ${result.join(', ')}`; // it is return without tests
 }
-let number = 15;
-let parts = 3;
+let number = 100;
+let parts = 10;
 
 console.log(splitNumber2(number, parts));
 
