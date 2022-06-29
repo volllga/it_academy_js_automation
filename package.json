@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Study project JS automation",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/volllga/it_academy_js_automation.git"
   },
+
   "author": "Volha Lukashevich",
   "license": "ISC",
   "bugs": {
@@ -19,4 +21,5 @@
   "dependencies": {
     "fs-extra": "^10.1.0"
   }
+
 }

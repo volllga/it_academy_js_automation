@@ -1,3 +1,15 @@
+#Подключение модулей
+
+1 - Update package.json like:
+"main": "index.js",
+"type":"module",
+
+2 - use.js when importing, like:
+import {isPrime} from './isPrime.js';
+
+3 - here is isPrime.js
+export const isPrime ....
+
 #Домашнее задание - Занятие 3
 
 1. Установить git;
@@ -39,4 +51,6 @@ git commit -m "smth"
 git push
 
 nano README.md
+
+
 
