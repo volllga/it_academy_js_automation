@@ -6,6 +6,9 @@ export class Auto {
     this.mileage = mileage;
     this.fuelСonsumption = fuelСonsumption;
     this.seatsNumber = seatsNumber;
+    this.airConditioner = false;
+    this.audioSystem = false;
+    this.childSeat = false;
     this.classAuto = 'Econom';
   }
 }
@@ -16,6 +19,20 @@ export class Comfort extends Auto {
     this.airConditioner = true;
     this.classAuto = 'Comfort';
   }
+
+  turnOnConditioner() {
+    console.log('Conditioner turned on');
+  }
+
+  turnOffConditioner() {
+    console.log('Conditioner turned off');
+  }
+
+  putOnChildSeat() {
+    this.childSeat = true;
+    this.classAuto = 'Child';
+  }
+
 }
 
 export class ComfortPlus extends Comfort {
@@ -34,13 +51,13 @@ export class ComfortPlus extends Comfort {
   }
 }
 
-export class Children extends Comfort {
-  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner) {
-    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner);
-    this.childSeat = true;
-    this.classAuto = 'Children';
-  }
-}
+// export class Children extends Comfort {
+//   constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner) {
+//     super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner);
+//     this.childSeat = true;
+//     this.classAuto = 'Children';
+//   }
+// }
 
 export class Minivan extends Auto {
   constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber) {
