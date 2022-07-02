@@ -6,7 +6,6 @@
 
 import {TaxiCompany} from './taxiCompany.js';
 import {Auto, Comfort, ComfortPlus, Children, Minivan} from './auto.js';
-import {getAutoByRange} from './getAutoByRange.js';
 
 let myCompany = new TaxiCompany(); // Создать таксопарк.
 
@@ -36,8 +35,8 @@ console.log(myCompany.sortAutos('fuelСonsumption', 'asc')); // Провести
 
 // Найти автомобиль в компании, соответствующий заданному диапазону параметров.
 let autos = myCompany.getAutos();
-let autosSortedByYearBuilt = getAutoByRange(autos, 'yearBuilt', 2000, 2017);
-console.log(getAutoByRange(autosSortedByYearBuilt, 'price', 1000, 11000));
+let autosSortedByYearBuilt = myCompany.getAutoByRange(autos, 'yearBuilt', 2000, 2017);
+console.log(myCompany.getAutoByRange(autosSortedByYearBuilt, 'price', 1000, 11000));
 // console.log(myCompany.getAuto('make', 'Volkswagen'));
 
 

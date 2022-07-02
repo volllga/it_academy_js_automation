@@ -32,5 +32,10 @@ export class TaxiCompany {
         return autos.sort((a, b) => b[option] - a[option]);
       }
   }
+
+  getAutoByRange(autos, option, lowerBoundary, upperBoundary) {
+    return autos.filter(item => (lowerBoundary <= item[option]
+      && item[option] <= upperBoundary));
+  }
 }
 
