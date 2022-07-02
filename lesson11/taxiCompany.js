@@ -11,6 +11,10 @@ export class TaxiCompany {
     this.totalPrice += auto.price;
   }
 
+  getAutos() {
+    return this.autos;
+  }
+
   getAuto(key, value) {
     let result = [];
     this.autos.forEach((auto) => {
