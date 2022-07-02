@@ -22,11 +22,11 @@ function startGame(player1, player2) {
   } else  if (sumPlayer2 > sumPlayer1) {
     return `${player2} is a winner!`;
   } else {
-    return `It is a dead heat!`;
+    return "It is a dead heat!";
   }
 }
 
-console.log(startGame('Nik', 'Vik'));
+console.log(startGame("Nik", "Vik"));
 
 
 //2) Подсчитать как много Пятниц 13-го было с 01/01/2000 до сегодня.
@@ -48,7 +48,7 @@ function getCountDays (year) {
       if (countOfMonth > monthFinish && today.getFullYear() === year) {
         break; // прерываем цикл, на месяце текущего года
       }
-      let day = new Date(year, countOfMonth, 13) //new Date(year, monthIndex, day)
+      let day = new Date(year, countOfMonth, 13); //new Date(year, monthIndex, day)
       if(day.getDay() === 5) { // пятница - 5
         count++;
       }
@@ -82,7 +82,7 @@ function splitNumber(number, parts) {
   }
   result.push(number - result.reduce((a, b) => a + b, 0));
 
-  return console.log(`${number} has parts: ${result.join(', ')}`);
+  return console.log(`${number} has parts: ${result.join(", ")}`);
 }
 splitNumber(100, 10);
 
@@ -109,7 +109,7 @@ let parts = 10;
 console.log(splitNumber2(number, parts));
 
 // tests for function splitNumber
-console.log('sum of array', Number((splitNumber2(number, parts)
+console.log("sum of array", Number((splitNumber2(number, parts)
   .reduce((a, b) => a + b))
   .toFixed(0)) === number);
-console.log('length of array', splitNumber2(number, parts).length === parts);
+console.log("length of array", splitNumber2(number, parts).length === parts);

@@ -13,8 +13,8 @@ function getNum(min, max, time) {  // эта функция заменяет д�
       let num = gerRandom2(min, max);
       resolve(num);
       console.log(num);
-    }, time)
-  })
+    }, time);
+  });
 }
 
 async function getSumOfNumbers() {

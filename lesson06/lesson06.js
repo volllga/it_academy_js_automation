@@ -1,19 +1,19 @@
 // 1. Дана строка из 6-ти цифр. Проверьте, что сумма первых трех цифр равняется сумме вторых трех цифр.
 // Если это так - выведите 'да', в противном случае выведите 'нет'.
-const str = '287854';
+const str = "287854";
 
 let first = str.slice(0, str.length / 2)  // получим индекс 3, он не включается в возвращаемый массив
-                .split('')
+                .split("")
                 .reduce((a, b) => Number(a) + Number(b));
 
 let second = str.slice(str.length / 2)
-                .split('')
+                .split("")
                 .reduce((a, b) => Number(a) + Number(b));
 
 if(first === second) {
-  console.log('да');
+  console.log("да");
 } else {
-  console.log('нет');
+  console.log("нет");
 }
 
 
@@ -40,7 +40,7 @@ function divideNumber(num, limit) {
   return `Получилось число ${result} за ${count} итераций.`; //Получилось число 31.25 за 5 итераций.
 }
 
-console.log(divideNumber(1000, 50))
+console.log(divideNumber(1000, 50));
 
 
 // 3. Дан массив arr. Найдите среднее арифметическое его элементов.
@@ -64,7 +64,7 @@ console.log(averageOfElements(arr)); // 35
 
 // 4. Дан массив [1, 2, 3, 4, 5]. Cделайте из него массив [1, 2, 3, 'a', 'b', 'c', 4, 5].
 let arr2 = [1, 2, 3, 4, 5];
-arr2.splice(3, 0, 'a', 'b', 'c');
+arr2.splice(3, 0, "a", "b", "c");
 console.log(arr2);
 
 
@@ -78,22 +78,22 @@ function insertElementIntoArray(arr, index, arrInsert) {
   }
   return arr;
 }
-insertElementIntoArray(arr3, 1, ['a', 'b']);
-insertElementIntoArray(arr3, 6, ['c']);
-insertElementIntoArray(arr3, 8, ['e']);
+insertElementIntoArray(arr3, 1, ["a", "b"]);
+insertElementIntoArray(arr3, 6, ["c"]);
+insertElementIntoArray(arr3, 8, ["e"]);
 console.log(arr3);
 
 
 //OPTION 5.2 Not the best solution: doesn't work with numbers > 9.
 const arr5 = [1, 2, 3, 4, 5];
-const str5 = arr5.join('')[0] + 'ab'
-            + arr5.join('').slice(1, 4) + 'c'
-            + arr5.join('').slice(-1) + 'e';
+const str5 = arr5.join("")[0] + "ab"
+            + arr5.join("").slice(1, 4) + "c"
+            + arr5.join("").slice(-1) + "e";
 let newArr5 = [];
 
 for(let i = 0; i < str5.length; i++) {
-  if('1234567890'.includes(str5[i])) {
-    newArr5.push(Number(str5[i]))
+  if("1234567890".includes(str5[i])) {
+    newArr5.push(Number(str5[i]));
   } else {
     newArr5.push(str5[i]);
   }

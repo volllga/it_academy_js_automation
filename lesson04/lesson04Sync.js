@@ -1,9 +1,9 @@
-const fse = require('fs-extra');
+const fse = require("fs-extra");
 
-const dir1 = './newFolder1';
-const dir2 = './newFolder2';
-const dir3 = './newFolder3';
-const file = '/newFile1.txt';
+const dir1 = "./newFolder1";
+const dir2 = "./newFolder2";
+const dir3 = "./newFolder3";
+const file = "/newFile1.txt";
 
 fse.ensureDirSync(dir1);
 fse.ensureFileSync(dir1 + file);

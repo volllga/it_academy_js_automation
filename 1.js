@@ -23,8 +23,8 @@ let promise3 = new Promise((resolve, reject) => {
 
 Promise.race([promise1, promise2, promise3])
   .then((result) => {
-  console.log(result);
-});
+    console.log(result);
+  });
 
 
 //Task 1. Option 2
@@ -97,3 +97,4 @@ async function getSumOfNumbers() {
 }
 
 getSumOfNumbers();
+
