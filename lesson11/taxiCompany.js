@@ -11,24 +11,22 @@ export class TaxiCompany {
     this.totalPrice += auto.price;
   }
 
-  getTotalPrice() {
-    return this.totalPrice;
-  }
-
   getAuto(key, value) {
     let result = [];
     this.autos.forEach((auto) => {
-      // console.log(auto);
-      // console.log(auto[key])
       if(auto[key] === value) {
         result.push(auto)}
     })
-
     return result;
   }
 
-  sortByFuelСonsumption(autos) {
-    this.autos.sort((a, b) => {auto.fuelСonsumption - auto.fuelСonsumption})
+  sortAutos(option, order) {
+    let autos = this.autos;
+      if (order === 'asc') {
+        return autos.sort((a, b) => a[option] - b[option]);
+      } else if (order === 'desc') {
+        return autos.sort((a, b) => b[option] - a[option]);
+      }
   }
 }
 

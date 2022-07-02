@@ -1,88 +1,56 @@
-
-// class TaxiCompany {
-//   constructor() {
-//     this.amountCars = 0;
-//     this.totalPrice = 0;
-//     this.autos = [];
-//   }
-//
-//   addAuto(auto) {
-//     this.autos.push(auto);
-//     this.amountCars += 1;
-//     this.totalPrice += auto.price;
-//   }
-//
-//   getTotalPrice() {
-//     return this.totalPrice;
-//   }
-//
-//   getAuto(key, value) {
-//     let result = [];
-//     this.autos.forEach((auto) => {
-//       // console.log(auto);
-//       // console.log(auto[key])
-//       if(auto[key] === value) {
-//         result.push(auto)}
-//     })
-//
-//     return result;
-//   }
-// }
-
-export class Auto {           //Модуль обычно содержит класс или библиотеку с функциями.
-  constructor(model, age, price, mileage, fuelСonsumption) {
-    this.model = model;
-    this.age = age;
+export class Auto {
+  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber) {
+    this.make = make;
+    this.yearBuilt = yearBuilt;
     this.price = price;
     this.mileage = mileage;
     this.fuelСonsumption = fuelСonsumption;
-    this.costMultiplier = 1;
-
-    // function getcostMultiplier (multiplier) {
-    //   return this.costMultiplier * multiplier;
-    // }
+    this.seatsNumber = seatsNumber;
+    this.classAuto = 'Econom';
   }
 }
 
 export class Comfort extends Auto {
-  constructor(model, age, price, mileage, fuelСonsumption) {
-    super(model, age, price, mileage, fuelСonsumption);
+  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber) {
+    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber);
     this.airConditioner = true;
-    this.costMultiplier = 1.2;
+    this.classAuto = 'Comfort';
   }
 }
 
 export class ComfortPlus extends Comfort {
-  constructor(model, age, price, mileage, fuelСonsumption) {
-    super(model, age, price, mileage, fuelСonsumption);
-    this.powerWindows = true;
+  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner) {
+    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner);
     this.audioSystem = true;
-    this.costMultiplier = 1.3;
+    this.classAuto = 'ComfortPlus';
+  }
+
+  turnOnAudioSystem() {
+    console.log('Music starts');
+  }
+
+  turnOffAudioSystem() {
+    console.log('Music ends');
   }
 }
 
-class Children extends Comfort {
-  constructor(model, age, price, mileage, fuelСonsumption) {
-    super(model, age, price, mileage, fuelСonsumption);
+export class Children extends Comfort {
+  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner) {
+    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner);
     this.childSeat = true;
-    this.costMultiplier = 1.3;
+    this.classAuto = 'Children';
   }
 }
 
-class Minivan extends Comfort {
-  constructor(model, age, price, mileage, fuelСonsumption, seatsNumber) {
-    super(model, age, price, mileage, fuelСonsumption);
+export class Minivan extends Auto {
+  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber) {
+    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber);
     this.seatsNumber = seatsNumber;
-    this.costMultiplier = 1.3;
+    this.extraSpase = true;
+    this.classAuto = 'Minivan';
+  }
+
+  deliver(load) {
+    console.log(`${load} is delivered`);
   }
 }
-
-
-
-
-// let newCompany = new TaxiCompany();
-// newCompany.addAuto(new ComfortPlus('BMW', 2017, 20000, 10000, 9));
-// newCompany.addAuto(new ComfortPlus('Volkswagen Jetta VII', 2019, 21500, 18800, 1.4));
-// console.log(newCompany)
-// console.log(newCompany.getAuto('model', 'BMW'))
-// console.log(newCompany.getTotalPrice())
