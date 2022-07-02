@@ -14,8 +14,8 @@ export class Auto {
 }
 
 export class Comfort extends Auto {
-  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber) {
-    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber);
+  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, audioSystem, childSeat) {
+    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, audioSystem, childSeat);
     this.airConditioner = true;
     this.classAuto = 'Comfort';
   }
@@ -32,12 +32,11 @@ export class Comfort extends Auto {
     this.childSeat = true;
     this.classAuto = 'Child';
   }
-
 }
 
 export class ComfortPlus extends Comfort {
-  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner) {
-    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner);
+  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner, childSeat) {
+    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner, childSeat);
     this.audioSystem = true;
     this.classAuto = 'ComfortPlus';
   }
@@ -51,17 +50,9 @@ export class ComfortPlus extends Comfort {
   }
 }
 
-// export class Children extends Comfort {
-//   constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner) {
-//     super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner);
-//     this.childSeat = true;
-//     this.classAuto = 'Children';
-//   }
-// }
-
 export class Minivan extends Auto {
-  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber) {
-    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber);
+  constructor(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner, audioSystem, childSeat) {
+    super(make, yearBuilt, price, mileage, fuelСonsumption, seatsNumber, airConditioner, audioSystem, childSeat);
     this.seatsNumber = seatsNumber;
     this.extraSpase = true;
     this.classAuto = 'Minivan';
@@ -69,5 +60,21 @@ export class Minivan extends Auto {
 
   deliver(load) {
     console.log(`${load} is delivered`);
+  }
+
+  putInExtraSeats(number) {
+    if(number > 0 && number < 5) {
+      this.seatsNumber += number;
+    } else {
+      console.log(`We can not put ${number} seats!`);
+    }
+  }
+
+  putOutSeats(number) {
+    if(number <= this.seatsNumber) {
+      this.seatsNumber -= number;
+    } else {
+      console.log(`We can not put out ${number} seats!`);
+    }
   }
 }

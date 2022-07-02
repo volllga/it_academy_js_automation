@@ -24,7 +24,7 @@ myCompany.addAuto(ch04VW);
 myCompany.addAuto(m05HY);
 myCompany.addAuto(e06LA);
 
-console.log(myCompany);
+// console.log(myCompany);
 console.log(myCompany.totalPrice); // Посчитать стоимость автопарка.
 // console.log(myCompany.amountCars);
 // cp02VW.turnOnAudioSystem();
@@ -34,6 +34,10 @@ console.log(myCompany.totalPrice); // Посчитать стоимость ав
 // ch04VW.putOnChildSeat();
 // console.log(ch04VW);
 // console.log(myCompany.getAuto('classAuto', 'Child'));
+// m05HY.putInExtraSeats(3);
+// console.log(m05HY);
+// m05HY.putOutSeats(11);
+// console.log(m05HY);
 
 console.log(myCompany.sortAutos('fuelСonsumption', 'asc')); // Провести сортировку автомобилей парка по расходу топлива.
 
