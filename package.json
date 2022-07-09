@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --debug ./ --fix",
-    "lint:write": "yarn pretty && eslint ./ --fix"
+    "lint:write": "yarn pretty && eslint ./ --fix",
+    "build": "npx tsc --build --clean && npx tsc"
   },
   "repository": {
     "type": "git",
