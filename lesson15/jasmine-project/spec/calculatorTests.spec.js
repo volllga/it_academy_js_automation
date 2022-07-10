@@ -8,6 +8,7 @@ describe("calculator spec", () => {
     calculator = new Calculator;
   });
 
+
   describe("a method add(numbers)", () => {
     [
       [0, 0],
@@ -66,6 +67,7 @@ describe("calculator spec", () => {
     });
   });
 
+
   describe("a method divide(numbers)", () => {
     [
       [" ", " "],
@@ -98,6 +100,7 @@ describe("calculator spec", () => {
       expect(calculator.divide(boolRandom(), boolRandom())).toBeNaN();
     });
   });
+
 
   describe("a method multiply(numbers)", () => {
     [
