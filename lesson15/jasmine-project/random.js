@@ -14,7 +14,7 @@ function exponRandom() {
   return (Math.random() * (20000000000000) - 10000000000000).toExponential();
 }
 
-console.log(exponRandom());
+// console.log(exponRandom());
 
 module.exports = { intRandom, floatRandom, boolRandom, exponRandom };
 
