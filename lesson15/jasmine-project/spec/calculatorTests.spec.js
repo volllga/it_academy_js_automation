@@ -49,7 +49,7 @@ describe("calculator spec", () => {
       [exponRandom(), exponRandom()]
     ].forEach((a, b) => {
       let difference = a - b;
-      it(`* should be able to add ${a} ${b} and return right ${difference}`, () => {
+      it(`* should be able to subtract ${a} from ${b} and return right ${difference}`, () => {
         expect(calculator.subtraction(a, b)).toEqual(difference); // 0+0, разное кол-во параметров
       });
     });
@@ -79,7 +79,7 @@ describe("calculator spec", () => {
       [exponRandom(), exponRandom()]
     ].forEach((a, b) => {
       let quotient = a / b;
-      it(`* should be able to add ${a} ${b} and return right ${quotient}`, () => {
+      it(`* should be able to divide ${a} by ${b} and return right ${quotient}`, () => {
         expect(calculator.divide(a, b)).toEqual(quotient); // 0+0, разное кол-во параметров
       });
     });
@@ -116,7 +116,7 @@ describe("calculator spec", () => {
       [exponRandom(), exponRandom()]
     ].forEach(([...args]) => {
       let product = [...args].reduce((sum, a) => sum * a, 1);
-      it(`* should be able to add ${args} and return right ${product}`, () => {
+      it(`* should be able to multiply ${args} and return right ${product}`, () => {
         expect(calculator.multiply(...args)).toEqual(product); // 0+0, разное кол-во параметров
       });
     });
@@ -131,6 +131,34 @@ describe("calculator spec", () => {
 
     it("a result should be a number", () => {
       expect(typeof calculator.multiply(intRandom(), floatRandom())).toEqual("number");
+    });
+  });
+
+
+  describe("a method exponentiation(numbers)", () => {
+    [
+      [0],
+      [" "],
+      [intRandom()],
+      [floatRandom()],
+      [exponRandom()]
+    ].forEach((a) => {
+      let exponent = a * a;
+      it(`* should be able to exponent ${a} and return right ${exponent}`, () => {
+        expect(calculator.exponentiation(a)).toEqual(exponent); // 0+0, разное кол-во параметров
+      });
+    });
+
+    it("does not handle NaN", function () {
+      expect(calculator.exponentiation(String(floatRandom()))).toBeNaN();
+    });
+
+    it("a result should be a number", () => {
+      expect(typeof calculator.exponentiation(intRandom())).toEqual("number");
+    });
+
+    it("does not handle NaN", function () {
+      expect(calculator.exponentiation(boolRandom())).toBeNaN();
     });
   });
 });
