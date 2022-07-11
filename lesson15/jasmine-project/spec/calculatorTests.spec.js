@@ -161,6 +161,22 @@ describe("calculator spec", () => {
       expect(calculator.exponentiation(boolRandom())).toBeNaN();
     });
   });
+
+
+  describe("should be able use different Jasmine methods", () => {
+    // !!! кейс с разными методами для тенировки
+    // Для примитивных типов (например, числа, логические значения, строки и т.д.) Нет разницы между toBe и toEqual
+    //Jasmine toBe matcher - не более чем оболочка для строгого сравнения на равенство
+    // toEqual проверяет "глубокое равенство" (т.е. выполняет рекурсивный поиск по объектам,
+    // чтобы определить, эквивалентны ли значения их ключей).
+    it("toBe", () => {
+      expect(calculator.add(1, 1)).toBe(2);
+    });
+
+    it("toBeGreaterThan", () => {
+      expect(calculator.add(1, 1)).toBeGreaterThan( 3 );
+    });
+  });
 });
 
 
