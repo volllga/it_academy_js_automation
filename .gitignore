@@ -3,6 +3,7 @@
 /.git
 /package-lock.json
 /.gitignore
+/build
 
 #.gitignore
 #Файл .gitignore необходимо добавить в корень проекта и в нем указать список исключений.
