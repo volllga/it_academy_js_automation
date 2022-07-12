@@ -15,11 +15,35 @@
   Максимальная оценка 8.
 
 1. элемент с картинкой
-> .responsive-image
-> //div[@class="responsive-image"]
+!> .responsive-image
+!> //div[@class="responsive-image"]
 
-2. дата
-> .module--header .module__title 
+
+2. топ нав меню
+
+- найти только первый видимый элемент
+> .orbit-header-links .orb-nav-homedotcom a
+> //*[@class="orbit-header-links international"]//li[@class="orb-nav-homedotcom"]
+
+- последний видимый элемент
+> .orbit-header-links .orb-nav-culture a
+> //*[@class="orbit-header-links international"]//li[@class="orb-nav-culture"]
+
+- найти все видимые элементы
+> .orbit-header-links.international li
+>  //*[@class="orbit-header-links international"]//li
+
+- все невидимые элементы
+>  .orbit-header-links.domestic li
+>  //*[@class="orbit-header-links domestic"]//li
+
+- найти нечетные элементы
+>  .orbit-header-links.international li:nth-child(odd)
+>  //*[@class="orbit-header-links international"]//li[position() mod 2 = 1]
+
+
+3. дата
+!> .module--header .module__title
 > //*[@class="module module--header"]/h2/text()
 
 
