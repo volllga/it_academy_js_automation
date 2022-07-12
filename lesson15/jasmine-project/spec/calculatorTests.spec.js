@@ -23,7 +23,7 @@ describe("calculator spec", () => {
     ].forEach(([...args]) => {
       let sum = [...args].reduce((sum, a) => sum + a, 0);
       it(`* should be able to add ${args} and return right ${sum}`, () => {
-        expect(calculator.add(...args)).toEqual(sum); // 0+0, разное кол-во параметров
+        expect(calculator.add(...args)).toEqual(sum);
       });
     });
 
@@ -50,7 +50,7 @@ describe("calculator spec", () => {
     ].forEach((a, b) => {
       let difference = a - b;
       it(`* should be able to subtract ${a} from ${b} and return right ${difference}`, () => {
-        expect(calculator.subtraction(a, b)).toEqual(difference); // 0+0, разное кол-во параметров
+        expect(calculator.subtraction(a, b)).toEqual(difference);
       });
     });
 
@@ -80,7 +80,7 @@ describe("calculator spec", () => {
     ].forEach((a, b) => {
       let quotient = a / b;
       it(`* should be able to divide ${a} by ${b} and return right ${quotient}`, () => {
-        expect(calculator.divide(a, b)).toEqual(quotient); // 0+0, разное кол-во параметров
+        expect(calculator.divide(a, b)).toEqual(quotient);
       });
     });
 
@@ -117,7 +117,7 @@ describe("calculator spec", () => {
     ].forEach(([...args]) => {
       let product = [...args].reduce((sum, a) => sum * a, 1);
       it(`* should be able to multiply ${args} and return right ${product}`, () => {
-        expect(calculator.multiply(...args)).toEqual(product); // 0+0, разное кол-во параметров
+        expect(calculator.multiply(...args)).toEqual(product);
       });
     });
 
@@ -145,7 +145,7 @@ describe("calculator spec", () => {
     ].forEach((a) => {
       let exponent = a * a;
       it(`* should be able to exponent ${a} and return right ${exponent}`, () => {
-        expect(calculator.exponentiation(a)).toEqual(exponent); // 0+0, разное кол-во параметров
+        expect(calculator.exponentiation(a)).toEqual(exponent);
       });
     });
 
@@ -175,6 +175,22 @@ describe("calculator spec", () => {
 
     it("toBeGreaterThan", () => {
       expect(calculator.add(1, 1)).toBeGreaterThan( 3 );
+    });
+
+    it("toMatch", () => {
+      expect(calculator.add("1", 1)).toMatch("11"); // toMatch(<string> || <regexp>)
+    });
+
+    it("toBeCloseTo", function() {
+      //the "precision" - SECOND parameter specifies the number of decimal places
+      // that the matcher will check precision at, with rounding.
+      //
+      // expect(0.1+0.2).toBe(0.3); // fails becouse it's 0.30000000000000004
+      // expect(0.1+0.2).toBeCloseTo(0.3); // pass
+      let pi = 3.1415926, e = 2.78;
+
+      expect(pi).not.toBeCloseTo(e, 2);
+      expect(pi).toBeCloseTo(e, 0);
     });
   });
 });
