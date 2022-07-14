@@ -15,19 +15,19 @@
   Максимальная оценка 8.
 
 1. элемент с картинкой
-!> .responsive-image
-!> //div[@class="responsive-image"]
+> .module--promo .media-list__item--1 .responsive-image
+> //ul[@class="media-list"]//*[contains(@class, 'media-list__item--1')]//*[@class="responsive-image"]
 
 
 2. топ нав меню
 
-- найти только первый видимый элемент
+- найти только первый видимый элемент (видимый/невидимый не очень понятно, предположу, что речь идет о domestic/international)
 > .orbit-header-links .orb-nav-homedotcom a
 > //*[@class="orbit-header-links international"]//li[@class="orb-nav-homedotcom"]
 
 - последний видимый элемент
-> .orbit-header-links .orb-nav-culture a
-> //*[@class="orbit-header-links international"]//li[@class="orb-nav-culture"]
+> .orbit-header-links .orb-nav-sounds a
+> //*[@class="orbit-header-links international"]//li[@class="orb-nav-sounds"]/a
 
 - найти все видимые элементы
 > .orbit-header-links.international li
@@ -43,25 +43,33 @@
 
 
 3. дата
-!> .module--header .module__title
+> .module--header > .module__title
 > //*[@class="module module--header"]/h2/text()
 
 
 4. кликабельный элемент поиска
+
 > #orbit-search-button
+> 
 > //*[@id="orbit-search-button"]
 
 5. лого
+
 > #homepage-link svg
+> 
 > //*[@id="homepage-link"]/*[name()='svg']
 
 6. новости блоком 
-Вариант А (мы с BBC считаем, что это блок новостей: они подписаны)))
+Вариант А (мы с BBC считаем, что это блок новостей: он подписан)))
+
 > .module--news 
+> 
 > //section[@class="module module--news   module--collapse-images"]
 
 Вариант Б (по картинке, но это не блок: в div здесь пять картинок, а обведены четыре)))
+
 > .module--promo li.media-list__item:not(.media-list__item--1)
+> 
 > //ul[@class="media-list"]//li[contains(@class, 'media-list__item') and not(contains(@class, 'media-list__item--1'))]
 
 css=<HTML tag><:><contains><(text)>
