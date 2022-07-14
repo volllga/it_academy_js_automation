@@ -53,10 +53,15 @@
 
 5. лого
 > #homepage-link svg
-> //*[@id="homepage-link"]/svg
+> //*[@id="homepage-link"]/*[name()='svg']
 
-6. новости блоком
+6. новости блоком 
+Вариант А (мы с BBC считаем, что это блок новостей: они подписаны)))
 > .module--news 
 > //section[@class="module module--news   module--collapse-images"]
+
+Вариант Б (по картинке, но это не блок: в div здесь пять картинок, а обведены четыре)))
+> .module--promo li.media-list__item:not(.media-list__item--1)
+> //ul[@class="media-list"]//li[contains(@class, 'media-list__item') and not(contains(@class, 'media-list__item--1'))]
 
 css=<HTML tag><:><contains><(text)>
