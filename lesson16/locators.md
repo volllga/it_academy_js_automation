@@ -24,10 +24,14 @@
 - найти только первый видимый элемент (видимый/невидимый не очень понятно, предположу, что речь идет о domestic/international)
 > .orbit-header-links .orb-nav-homedotcom a
 > //*[@class="orbit-header-links international"]//li[@class="orb-nav-homedotcom"]
+> //*[@class="orbit-header-links domestic"]//li[1]
 
 - последний видимый элемент
 > .orbit-header-links .orb-nav-sounds a
 > //*[@class="orbit-header-links international"]//li[@class="orb-nav-sounds"]/a
+
+Если речь идет о пунктах меню, которые не спрятаны под ... , то в зависимости от разрешения экрана последняя видимая ссылка будет шестой или седьмой ...
+> /*[@class="orbit-header-links international"]//li[7]/a
 
 - найти все видимые элементы
 > .orbit-header-links.international li
@@ -36,6 +40,10 @@
 - все невидимые элементы
 >  .orbit-header-links.domestic li
 >  //*[@class="orbit-header-links domestic"]//li
+
+Как вариант, нашли картинки svg. :
+> .orbit-header-links [aria-hidden='true']
+> //*[(contains(@class, "orbit-header-links"))]//*[(contains(@aria-hidden,'true'))]
 
 - найти нечетные элементы
 >  .orbit-header-links.international li:nth-child(odd)
