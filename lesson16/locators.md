@@ -22,12 +22,19 @@
 2. топ нав меню
 
 - найти только первый видимый элемент (видимый/невидимый не очень понятно, предположу, что речь идет о domestic/international)
+
+
 > .orbit-header-links .orb-nav-homedotcom a
+
+
 > //*[@class="orbit-header-links international"]//li[@class="orb-nav-homedotcom"]
+
+ 
 > //*[@class="orbit-header-links domestic"]//li[1]
 
 - последний видимый элемент
 > .orbit-header-links .orb-nav-sounds a
+
 > //*[@class="orbit-header-links international"]//li[@class="orb-nav-sounds"]/a
 
 Если речь идет о пунктах меню, которые не спрятаны под ... , то в зависимости от разрешения экрана последняя видимая ссылка будет шестой или седьмой ...
@@ -35,49 +42,54 @@
 
 - найти все видимые элементы
 > .orbit-header-links.international li
+
 >  //*[@class="orbit-header-links international"]//li
 
 - все невидимые элементы
 >  .orbit-header-links.domestic li
+
 >  //*[@class="orbit-header-links domestic"]//li
 
 Как вариант, нашли картинки svg. :
 > .orbit-header-links [aria-hidden='true']
+
 > //*[(contains(@class, "orbit-header-links"))]//*[(contains(@aria-hidden,'true'))]
 
 - найти нечетные элементы
 >  .orbit-header-links.international li:nth-child(odd)
+
 >  //*[@class="orbit-header-links international"]//li[position() mod 2 = 1]
 
 
 3. дата
 > .module--header > .module__title
+
 > //*[@class="module module--header"]/h2/text()
 
 
 4. кликабельный элемент поиска
 
 > #orbit-search-button
-> 
+
 > //*[@id="orbit-search-button"]
 
 5. лого
 
 > #homepage-link svg
-> 
+
 > //*[@id="homepage-link"]/*[name()='svg']
 
 6. новости блоком 
 Вариант А (мы с BBC считаем, что это блок новостей: он подписан)))
 
 > .module--news 
-> 
+
 > //section[@class="module module--news   module--collapse-images"]
 
 Вариант Б (по картинке, но это не блок: в div здесь пять картинок, а обведены четыре)))
 
 > .module--promo li.media-list__item:not(.media-list__item--1)
-> 
+
 > //ul[@class="media-list"]//li[contains(@class, 'media-list__item') and not(contains(@class, 'media-list__item--1'))]
 
 css=<HTML tag><:><contains><(text)>
