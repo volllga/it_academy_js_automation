@@ -42,8 +42,8 @@ describe.only("lesson 17 homework", function () {
   });
 
   // проверяем тайтл страницы
-  it("Page title should be equil to ChromeDriver - WebDriver for Chrome", () => {
-    checkPageTitle(homePageTitle);
+  it("Page title should be equil to ChromeDriver - WebDriver for Chrome", async () => {
+    await checkPageTitle(homePageTitle);
   });
 
   // 2) проверить текст основного тайтла "ChromeDriver"
@@ -61,8 +61,8 @@ describe.only("lesson 17 homework", function () {
   });
 
   // проверяем тайтл страницы
-  it("Page title should be equil to ChromeDriver - WebDriver for Chrome - Chrome Extensions", () => {
-    checkPageTitle(chromeExtensionsPageTitle);
+  it("Page title should be equil to ChromeDriver - WebDriver for Chrome - Chrome Extensions", async () => {
+    await checkPageTitle(chromeExtensionsPageTitle);
   });
 
   // 4) сделать хайлайт для нового основного тайтла
