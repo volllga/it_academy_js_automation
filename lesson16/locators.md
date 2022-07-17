@@ -16,6 +16,7 @@
 
 1. элемент с картинкой
 > .module--promo .media-list__item--1 .responsive-image
+
 > //ul[@class="media-list"]//*[contains(@class, 'media-list__item--1')]//*[@class="responsive-image"]
 
 
