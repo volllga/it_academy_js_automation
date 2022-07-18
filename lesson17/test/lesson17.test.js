@@ -9,7 +9,7 @@
 // 8. Проверить что первая ссылка содержит слово driver
 // Задание оценивается из 9 баллов
 
-const { Builder, By, Key} = require("selenium-webdriver");
+const { Builder, By, Key, until} = require("selenium-webdriver");
 const driver = new Builder().forBrowser("chrome").build();
 const chai = require("chai");
 const assert = chai.assert;
@@ -88,10 +88,15 @@ describe.only("lesson 17 homework", function () {
     await driver.sleep(1000);
 
     // 8. Проверить что первая ссылка содержит слово driver
-    const link = await driver.findElement(By.xpath("//*[@class=\"lZsZxe\"]//a[1]")).getAttribute("href");
+    const firstResult = await driver.findElement(By.xpath("//*[@class=\"lZsZxe\"]//a[1]"));
+    const link = await firstResult.getAttribute("href");
+    const linkInnerText = "driver";
     // выведем линк в консоль для отладки теста
     console.log(link);
-    assert.isTrue(link.includes("driver"));
+    assert.isTrue(link.includes(linkInnerText));
+    // перейдем по первой ссылке и проверим url полученной страницы
+    await driver.actions().click(firstResult).perform();
+    await driver.wait(until.urlContains(linkInnerText), 10000);
   });
 
 
