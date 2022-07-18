@@ -14,8 +14,8 @@ const driver = new Builder().forBrowser("chrome").build();
 const chai = require("chai");
 const assert = chai.assert;
 
-const homePageTitle = "ChromeDriver - WebDriver for Chrome";
-const chromeExtensionsPageTitle = "ChromeDriver - WebDriver for Chrome - Chrome Extensions";
+const homePageTitleText = "ChromeDriver - WebDriver for Chrome";
+const chromeExtensionsPageTitleText = "ChromeDriver - WebDriver for Chrome - Chrome Extensions";
 
 
 async function checkPageTitle(expectTitle) {
@@ -23,13 +23,13 @@ async function checkPageTitle(expectTitle) {
   assert.equal(title, expectTitle);
 }
 
-async function checkH1Text(expectedText){
-  // находим h1 элемент получаем текст элемента
-  let h1Text = await driver.findElement(By.xpath("//h1/span")).getText();
+async function checkElementText(element, expectedText){
+  // находим элемент получаем текст элемента
+  let elementText = await driver.findElement(By.xpath(element)).getText();
   // выведем текст в консоль для отладки теста
-  console.log(h1Text, expectedText);
+  console.log(elementText, expectedText);
   // проверим текст на соответствие
-  assert.equal(h1Text, expectedText);
+  assert.equal(elementText, expectedText);
 }
 
 describe.only("lesson 17 homework", function () {
@@ -43,12 +43,13 @@ describe.only("lesson 17 homework", function () {
 
   // проверяем тайтл страницы
   it("Page title should be equil to ChromeDriver - WebDriver for Chrome", async () => {
-    await checkPageTitle(homePageTitle);
+    await checkPageTitle(homePageTitleText);
   });
 
   // 2) проверить текст основного тайтла "ChromeDriver"
   it("Page h1 element should have text \"ChromeDriver\"", async () => {
-    await checkH1Text("ChromeDriver");
+    const h1Element = "//h1/span";
+    await checkElementText(h1Element,"ChromeDriver");
   });
 
 //  3) кликнуть в хедере на пункт "Chrome Extencions"
@@ -62,7 +63,7 @@ describe.only("lesson 17 homework", function () {
 
   // проверяем тайтл страницы
   it("Page title should be equil to ChromeDriver - WebDriver for Chrome - Chrome Extensions", async () => {
-    await checkPageTitle(chromeExtensionsPageTitle);
+    await checkPageTitle(chromeExtensionsPageTitleText);
   });
 
   // 4) сделать хайлайт для нового основного тайтла
@@ -74,7 +75,8 @@ describe.only("lesson 17 homework", function () {
 
   // 5) проверить что новый тайтл стал "Chrome Extencions"
   it("Page h1 element should have text \"Chrome Extensions\"", async () => {
-    await checkH1Text("Chrome Extensions");
+    const h1Element = "//h1/span";
+    await checkElementText(h1Element, "Chrome Extensions");
   });
 
   it("Serch", async () => {
