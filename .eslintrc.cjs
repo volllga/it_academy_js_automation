@@ -3,7 +3,8 @@ module.exports = {
         "browser": true,
         "commonjs": true,
         "es2021": true,
-        "jasmine": true
+        "jasmine": true,
+        "mocha": true
     },
 
     "extends": [
@@ -24,6 +25,6 @@ module.exports = {
 
     "rules": {
       "semi": ["error", "always"],
-      "quotes": ["error", "double"]
+      '@typescript-eslint/no-var-requires': 0
     }
 }
