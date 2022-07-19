@@ -43,7 +43,6 @@ describe.only("lesson 17 homework", function () {
     await driver.manage().window().maximize();
   });
 
-
   // проверяем тайтл страницы
   it("Page title should be equivalent to ChromeDriver - WebDriver for Chrome", async () => {
     await checkPageTitle(homePageTitleText);
@@ -52,7 +51,6 @@ describe.only("lesson 17 homework", function () {
   // 2) проверить текст основного тайтла "ChromeDriver"
   it("Page h1 element should have text 'ChromeDriver'", async () => {
     const h1Element = "//h1/span";
-
     await checkElementText(h1Element,"ChromeDriver");
   });
 
@@ -61,7 +59,6 @@ describe.only("lesson 17 homework", function () {
     const dropdown = await driver.findElement(By.css('.oXBWEc > .PsKE7e [jscontroller="yUHiM"]'));
     const extensionsLink = await driver
       .findElement(By.xpath('//*[@class="PsKE7e qV4dIc Qrrb5 YSH9J"]//a[text()="Chrome Extensions"]'));
-
     await driver.actions().click(dropdown).perform();
     await driver.actions().click(extensionsLink).perform();
     await driver.wait(until.urlContains('/extensions'), 10000);
@@ -75,7 +72,6 @@ describe.only("lesson 17 homework", function () {
   // 4) сделать хайлайт для нового основного тайтла
   it("HighLight new page Title", async () => {
     const title = await driver.findElement(By.css(".jXK9ad-SmKAyb .Rn3Z1b"));
-
     driver.executeScript("arguments[0].style.backgroundColor = 'green'", title);
     await driver.sleep(2000);
   });
@@ -83,7 +79,6 @@ describe.only("lesson 17 homework", function () {
   // 5) проверить что новый тайтл стал "Chrome Extencions"
   it("Page h1 element should have text \"Chrome Extensions\"", async () => {
     const h1Element = "//h1/span";
-
     await checkElementText(h1Element, "Chrome Extensions");
   });
 
@@ -100,7 +95,6 @@ describe.only("lesson 17 homework", function () {
     const firstResult = await driver.findElement(By.xpath('//*[@class="lZsZxe"]//a[1]'));
     const link = await firstResult.getAttribute("href");
     const linkInnerText = "driver";
-
     // выведем линк в консоль для отладки теста
     // console.log(link);
     assert.isTrue(link.includes(linkInnerText));
