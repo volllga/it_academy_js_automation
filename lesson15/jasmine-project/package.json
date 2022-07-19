@@ -7,8 +7,7 @@
   "scripts": {
     "test": "jasmine",
     "lint": "eslint --debug ./ --fix",
-    "lint:write": "yarn pretty && eslint ./ --fix",
-    "build": "npx tsc --build --clean && npx tsc"
+    "lint:write": "yarn pretty && eslint ./ --fix"
   },
   "repository": {
     "type": "git",
