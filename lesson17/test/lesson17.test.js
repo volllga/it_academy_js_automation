@@ -18,11 +18,13 @@ const homePageTitleText = "ChromeDriver - WebDriver for Chrome";
 const chromeExtensionsPageTitleText = "ChromeDriver - WebDriver for Chrome - Chrome Extensions";
 
 
+//chech title of a page
 async function checkPageTitle(expectTitle) {
   const title = await driver.getTitle();
   assert.equal(title, expectTitle);
 }
 
+//check text of an element
 async function checkElementText(element, expectedText){
   // находим элемент получаем текст элемента
   let elementText = await driver.findElement(By.xpath(element)).getText();
@@ -47,18 +49,18 @@ describe.only("lesson 17 homework", function () {
   });
 
   // 2) проверить текст основного тайтла "ChromeDriver"
-  it("Page h1 element should have text \"ChromeDriver\"", async () => {
+  it("Page h1 element should have text 'ChromeDriver'", async () => {
     const h1Element = "//h1/span";
     await checkElementText(h1Element,"ChromeDriver");
   });
 
 //  3) кликнуть в хедере на пункт "Chrome Extencions"
-  it("click Chrome Extensions", async () => {
+  it("click Chrome Extensions link in the nav should lead to the Crome Extencion page", async () => {
     const dropdown = await driver.findElement(By.css(".oXBWEc > .PsKE7e [jscontroller=\"yUHiM\"]"));
-    const extensions = await driver
+    const extensionsLink = await driver
       .findElement(By.xpath("//*[@class=\"PsKE7e qV4dIc Qrrb5 YSH9J\"]//a[text()=\"Chrome Extensions\"]"));
     await driver.actions().click(dropdown).perform();
-    await driver.actions().click(extensions).perform();
+    await driver.actions().click(extensionsLink).perform();
   });
 
   // проверяем тайтл страницы
