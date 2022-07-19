@@ -54,6 +54,7 @@ describe("calculator spec", () => {
       });
     });
 
+    // неверный тест: в требованиях нет указания на NaN
     it("does not handle NaN", function () {
       expect(calculator.subtraction(String(floatRandom()), intRandom())).toBeNaN();
     });
@@ -88,6 +89,7 @@ describe("calculator spec", () => {
       expect(calculator.divide(intRandom(), 0)).toEqual("division by zero not allowed");
     });
 
+    // неверный тест: в требованиях нет указания на NaN
     it("does not handle NaN", function () {
       expect(calculator.divide(String(floatRandom()), intRandom())).toBeNaN();
     });
