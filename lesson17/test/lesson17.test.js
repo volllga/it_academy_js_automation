@@ -42,7 +42,7 @@ describe.only("lesson 17 homework", function () {
   });
 
   // проверяем тайтл страницы
-  it("Page title should be equil to ChromeDriver - WebDriver for Chrome", async () => {
+  it("Page title should be equivalent to ChromeDriver - WebDriver for Chrome", async () => {
     await checkPageTitle(homePageTitleText);
   });
 
