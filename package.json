@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/volllga/it_academy_js_automation#readme",
   "dependencies": {
+    "eslint-plugin-chai-friendly": "^0.7.2",
     "fs-extra": "^10.1.0",
     "jasmine-spec-reporter": "^7.0.0"
   },
@@ -29,6 +30,7 @@
     "chai": "^4.3.6",
     "eslint": "^8.19.0",
     "eslint-plugin-jasmine": "^4.1.3",
+    "eslint-plugin-wdio": "^7.20.6",
     "jasmine": "^4.2.1",
     "typescript": "^4.7.4"
   }

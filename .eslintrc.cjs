@@ -10,7 +10,8 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:jasmine/recommended"
+        "plugin:jasmine/recommended",
+        "plugin:wdio/recommended"
     ],
 
     "parser": "@typescript-eslint/parser",
@@ -21,6 +22,8 @@ module.exports = {
     "plugins": [
         "@typescript-eslint",
         "jasmine",
+        "chai-friendly",
+        "wdio"
     ],
 
     "rules": {
