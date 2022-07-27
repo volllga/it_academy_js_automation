@@ -2,7 +2,12 @@ class ElementUtil{
 
   async doClick(element) {
     await element.waitForDisplayed();
-    element.click();
+    await element.click();
+  }
+
+  doGetText(element) {
+    element.waitForDisplayed();
+    return element.getText();
   }
 
 }
