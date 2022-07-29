@@ -1,5 +1,5 @@
 const GettingStartedPage = require('../pageobjects/gettingStarted.page');
-// const ElementUtil = require('../helpers/elementUtil');
+const constants = require('../../constants');
 
 
 describe('Getting Started page tests', () => {
@@ -11,7 +11,7 @@ describe('Getting Started page tests', () => {
   it('Getting Started page has title header "Getting Started"\'', async () => {
     const title = await browser.getTitle();
 
-    expect(title).toEqual('Getting Started | WebdriverIO');
+    expect(title).toEqual(constants.GETTING_STARTED_PAGE_TITLE);
   });
 
   it('Getting Started page has h1 header "Getting Started"', async () => {
