@@ -1,4 +1,5 @@
 const ContributePage = require('../pageobjects/contribute .page');
+const FooterComponent = require('../components/footer.component');
 
 
 describe('Contribute page tests', () => {
@@ -19,20 +20,19 @@ describe('Contribute page tests', () => {
     expect(header).toEqual('Contribute');
   });
 
-  it('Footer should have the Logo save a screenshot of footer Logo', async () => {
-    const footerLogo = await $('.footer__logo');
-    await footerLogo.scrollIntoView();
-    await footerLogo.saveScreenshot('./screenshots/footerLogo.png');
-  });
-
-  it('button ScrollBack should have a CSS Property visibility: "visible"', async () => {
+  it('Button ScrollBack should change a CSS Property visibility from "hidden" to "visible" after scroll up', async () => {
     await ContributePage.open();
-    const buttonScrollBack = await ContributePage.buttonScrollBack;
-    await $('theme-edit-this-page').scrollIntoView();
-    await $('iframe').scrollIntoView();
-    const visibility = await buttonScrollBack.getCSSProperty('visibility');
+    const buttonScrollBackHidden = await ContributePage.buttonScrollBackHidden;
+    const visibilityHidden = await buttonScrollBackHidden.getCSSProperty('visibility');
 
-    expect(visibility.value).toEqual('visible');
+    expect(visibilityHidden.value).toEqual('hidden');
+
+    await FooterComponent.footer.scrollIntoView();
+    await $('iframe').scrollIntoView();
+    const buttonScrollBackVisible = await ContributePage.buttonScrollBackVisible;
+    const visibilityVisible = await buttonScrollBackVisible.getCSSProperty('visibility');
+
+    expect(visibilityVisible.value).toEqual('visible');
   });
 
 });

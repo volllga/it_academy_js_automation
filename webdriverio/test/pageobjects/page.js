@@ -1,16 +1,15 @@
 const ElementUtil = require('../helpers/elementUtil');
 
 module.exports = class Page {
-  get buttonScrollBack() {return $('.backToTopButtonShow_ssHd');}
 
-  
+  get buttonScrollBackVisible() {return $('.backToTopButtonShow_ssHd');}
+  get buttonScrollBackHidden() {return $('.backToTopButton_RiI4');}
+  get pageHeader() {return $('h1');}
+  get breadcrumbsLinks(){return $$('.breadcrumbs__link');}
+
   open (path) {
     return browser.url(`https://webdriver.io/${path}`);
   }
-
-  get pageHeader() {return $('h1');}
-  get breadcrumbsLinks(){return $$('.breadcrumbs__link');}
-  get footerLogo(){return('.footer__logo');}
 
   async click(element) {
     await ElementUtil.doClick(element);
@@ -19,6 +18,5 @@ module.exports = class Page {
   getText(element) {
     return ElementUtil.doGetText(element);
   }
-
 
 };

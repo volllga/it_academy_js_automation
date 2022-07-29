@@ -3,8 +3,8 @@ const BlogPage = require('../pageobjects/blog.page');
 
 describe('Blog page tests', () => {
   before('Open Blog page', async () => {
-    await BlogPage.open();
     browser.maximizeWindow();
+    await BlogPage.open();
   });
 
   it('Blog page has title "Blog | WebdriverIO"', async () => {

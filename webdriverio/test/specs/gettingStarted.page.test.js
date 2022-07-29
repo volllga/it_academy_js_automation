@@ -1,5 +1,5 @@
 const GettingStartedPage = require('../pageobjects/gettingStarted.page');
-const ElementUtil = require('../helpers/elementUtil');
+// const ElementUtil = require('../helpers/elementUtil');
 
 
 describe('Getting Started page tests', () => {
