@@ -1,7 +1,7 @@
 const FooterComponent = require('../components/footer.component');
 const GettingStartedPage = require('../pageobjects/gettingStarted.page');
 
-describe('', () => {
+describe('Footer component tests', () => {
   before('Open Getting Started page', async () => {
     await browser.maximizeWindow();
     await GettingStartedPage.open();

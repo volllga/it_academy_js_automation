@@ -1,4 +1,5 @@
 const BlogPage = require('../pageobjects/blog.page');
+const constants = require('../../constants');
 
 
 describe('Blog page tests', () => {
@@ -7,10 +8,10 @@ describe('Blog page tests', () => {
     await BlogPage.open();
   });
 
-  it('Blog page has title "Blog | WebdriverIO"', async () => {
+  it(`Blog page has title ${constants.BLOG_PAGE_TITLE}`, async () => {
     const title = await browser.getTitle();
 
-    expect(title).toEqual('Blog | WebdriverIO');
+    expect(title).toEqual(constants.BLOG_PAGE_TITLE);
   });
 
   it('Every Post has Title and Date', async () => {

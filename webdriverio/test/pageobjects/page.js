@@ -1,4 +1,5 @@
 const ElementUtil = require('../helpers/elementUtil');
+const constants = require('../../constants');
 
 module.exports = class Page {
 

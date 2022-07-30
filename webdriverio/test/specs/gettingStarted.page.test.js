@@ -8,16 +8,16 @@ describe('Getting Started page tests', () => {
     await GettingStartedPage.open();
   });
 
-  it('Getting Started page has title header "Getting Started"\'', async () => {
+  it(`Getting Started page has title header ${constants.GETTING_STARTED_PAGE_TITLE}`, async () => {
     const title = await browser.getTitle();
 
     expect(title).toEqual(constants.GETTING_STARTED_PAGE_TITLE);
   });
 
-  it('Getting Started page has h1 header "Getting Started"', async () => {
+  it(`Getting Started page has h1 header ${constants.GETTING_STARTED_PAGE_HEADER}`, async () => {
     await expect(GettingStartedPage.pageHeader).toBeExisting();
     await expect(GettingStartedPage.pageHeader).toHaveTextContaining(
-      'Getting Started');
+      constants.GETTING_STARTED_PAGE_HEADER);
   });
 
   it('Getting Started page has Alert block', async () => {
@@ -31,19 +31,19 @@ describe('Getting Started page tests', () => {
   });
 
   // в этом тесте использован element API метод click()
-  it('Breadcrumb Home page leads to https://webdriver.io/', async () => {
+  it(`Breadcrumb Home page leads to ${constants.HOME_PAGE_URL}`, async () => {
     const breadcrumbHome = await GettingStartedPage.breadcrumbsLinks[0];
     await breadcrumbHome.click();
-    const pageUrl = await  browser.getUrl();
+    const pageUrl = await browser.getUrl();
 
-    expect(pageUrl).toEqual('https://webdriver.io/');
+    expect(pageUrl).toEqual(constants.HOME_PAGE_URL);
     await browser.back(); // тесты расположены в неверном порядке специально, чтобы потренировать browser.back()
   });
 
   // в этом тесте использован  метод click(element) из модуля elementUtil
-  it('Alert block has link "old documentation websites" that lead to /versions', async () => {
+  it(`Alert block has link "old documentation websites" that lead to ${constants.VERSIONS_PAGE_URL}`, async () => {
 
-    const link = await $('.admonition-content  a');
+    const link = await $('.admonition-content a');
     const linkText = await GettingStartedPage.getText(link);
 
     expect(linkText).toBe('old documentation websites');
@@ -51,7 +51,6 @@ describe('Getting Started page tests', () => {
     await GettingStartedPage.click(link);
     const pageUrl = await browser.getUrl();
 
-    expect(pageUrl).toEqual('https://webdriver.io/versions');
+    expect(pageUrl).toEqual(constants.HOME_PAGE_URL + constants.VERSIONS_PAGE_URL);
   });
-
 });

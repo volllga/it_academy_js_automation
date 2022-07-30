@@ -1,23 +1,24 @@
 const ContributePage = require('../pageobjects/contribute .page');
 const FooterComponent = require('../components/footer.component');
+const constants = require('../../constants');
 
 
 describe('Contribute page tests', () => {
   before('Open Contribute page', async () => {
-    browser.maximizeWindow();
+    await browser.maximizeWindow();
     await ContributePage.open();
   });
 
-  it('Contribute page has title "Contribute | WebdriverIO"', async () => {
+  it(`Contribute page has title ${constants.CONTRIBUTE_PAGE_TITLE}`, async () => {
     const title = await browser.getTitle();
 
-    expect(title).toEqual('Contribute | WebdriverIO');
+    expect(title).toEqual(constants.CONTRIBUTE_PAGE_TITLE);
   });
 
-  it('Contribute page has header "Contribute"', async () => {
+  it(`Contribute page has header ${constants.CONTRIBUTE_PAGE_HEADER}`, async () => {
     const header = await ContributePage.getText(ContributePage.pageHeader);
 
-    expect(header).toEqual('Contribute');
+    expect(header).toEqual(constants.CONTRIBUTE_PAGE_HEADER);
   });
 
   it('Button ScrollBack should change a CSS Property visibility from "hidden" to "visible" after scroll up', async () => {
@@ -34,5 +35,4 @@ describe('Contribute page tests', () => {
 
     expect(visibilityVisible.value).toEqual('visible');
   });
-
 });
