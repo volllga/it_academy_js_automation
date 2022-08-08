@@ -4,6 +4,27 @@
 /package-lock.json
 /.gitignore
 /build
+lesson17/mochawesome-report/
+lesson17/node_modules/
+lesson17/package-lock.json
+
+playwright/cred.ts
+playwright/node_modules/
+playwright/package-lock.json
+playwright/package.json
+playwright/playwright-report/
+playwright/playwright.config.ts
+playwright/tests-examples
+playwright/videos
+
+tests-examples
+
+webdriverio/allure-results
+webdriverio/allure-report
+webdriverio/screenshots
+webdriverio/node_modules
+
+
 
 #.gitignore
 #Файл .gitignore необходимо добавить в корень проекта и в нем указать список исключений.
