@@ -1,8 +1,12 @@
 require('cypress-xpath');
 describe('First component of /example-4 page', () => {
 
-  beforeEach( () => {
+  before( () => {
     cy.visit('http://localhost:3000/example-4');
+  });
+
+  beforeEach( () => {
+    cy.reload();
   });
 
 
@@ -11,7 +15,7 @@ describe('First component of /example-4 page', () => {
       .should('have.text', 'Click to highlight, double click to select');
   });
 
-  it('There are not selected options after reloading page', () => {
+  it('There are not selected options in the First block after reloading page', () => {
     cy.get('.sc-htoDjs:nth-child(1) p:nth-child(3) span')
       .should('have.text', 'Nothing selected');
   });
