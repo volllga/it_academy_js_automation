@@ -29,6 +29,3 @@ Cypress.Commands.add('chooseOption',  (option) => {
   return cy.get('[data-cy="box-3-selected-name"]').should('have.text', option);
 });
 
-Cypress.Commands.add('choose',  (option) => {
-  return;
-});
