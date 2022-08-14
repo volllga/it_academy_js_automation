@@ -3,9 +3,7 @@
 /.git
 /package-lock.json
 /.gitignore
-/build
-
-#.gitignore
+/build#.gitignore
 #Файл .gitignore необходимо добавить в корень проекта и в нем указать список исключений.
 
 #	Комментарий
@@ -19,3 +17,12 @@
 #/*.a	Игнорировать все файлы, заканчивающиеся на .a в текущем каталоге
 #dir/	Игнорировать все файлы в каталоге dir/
 #/dir/	Игнорировать каталог /dir и все его содержимое
+/lesson17/mochawesome-report/
+/lesson17/node_modules/
+node_modules/
+/playwright/playwright-report
+/playwright/cred.ts
+
+/webdriverio/allure-report/
+/webdriverio/allure-results/
+/webdriverio/screenshots/
