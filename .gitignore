@@ -19,6 +19,8 @@ node_modules/
 /playwright/playwright-report
 /playwright/cred.ts
 
+/cypress/
+
 
 /build
 
