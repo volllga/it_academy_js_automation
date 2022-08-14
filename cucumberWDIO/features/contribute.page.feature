@@ -1,14 +1,14 @@
 Feature: Blog Page
   Blog page has title Blog | WebdriverIO
 
-  Scenario Outline: Every Blog Page Post has Title
+  Scenario: Contribute Page has Title "Contribute | WebdriverIO"
 
     Given I am on the home page
     When  I go to the contribute page
-    Then I should see a page title
+    Then I should see a contribute page title
 
-  Scenario Outline: Every Blog Page Post has Date
+  Scenario: Contribute Page "Contribute" header
 
     Given I am on the home page
-    When  I go to the blog page
-    Then I should see a page title
+    When  I go to the contribute page
+    Then I should see contribute page header
