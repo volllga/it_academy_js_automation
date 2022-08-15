@@ -22,7 +22,7 @@ const optionsPOST = {
 };
 
 describe('Simple Books API tests', () => {
-  it('GET /status', async () => {
+  it('Status code of GET /status should be 200', async () => {
     const response = await axios.get(`https://simple-books-api.glitch.me/status`,)
     expect(await response.status).toEqual(200);
   });
