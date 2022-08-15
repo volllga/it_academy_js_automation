@@ -15,7 +15,7 @@ const optionsPOST = {
   headers: {
     'content-type': 'application/x-www-form-urlencoded',
     'Accept-Encoding': 'application/gzip',
-    'X-RapidAPI-Key': '82b05199c2msh799e0d1c857e6ffp1ec665jsn7029289a5b36',
+    'X-RapidAPI-Key': '',
     'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
   },
   data: encodedParams
