@@ -1,9 +1,9 @@
-const DatatableObject = require('./datatable.Object');
+const DatatableObject = require("./datatable.Object");
 
 class DatatableVendorsObject extends DatatableObject {
-
-    get btnDeleteDriver() {return $('//*[text()="Delete Driver"]')}
-
+  get btnDeleteVendor() {
+    return $('//*[text()="Delete"]');
+  }
 }
 
 module.exports = new DatatableVendorsObject();

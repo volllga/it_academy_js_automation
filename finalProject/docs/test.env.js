@@ -1,8 +1,8 @@
 const  config  = require('./config');
-const env = config.qa;
+// const env = config.qa;
 // const env = config.stable;
 // const env = config.prod;
-// const env = config.prodSCT;
+const env = config.prodSCT;
 
 class TestEnv {
   get portalUrl() {return env.portalUrl;}

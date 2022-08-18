@@ -1,7 +1,7 @@
 const PageLoginObject = require('../../page.Objects/page.Login.Object');
 const PageScheduledPaymentsObject = require('../../page.Objects/page.ScheduledPayments.Object');
 const filtersScheduledPaymentsObject = require('../../components.Objects/extendFilters.Objects/filters.ScheduledPayments.Object');
-const constants = require('../../documentation/constants');
+const constants = require('../../docs/constants');
 
 
 describe ('Scheduled Payments Page. Category filters tests.',  () => {
@@ -9,7 +9,7 @@ describe ('Scheduled Payments Page. Category filters tests.',  () => {
   before(async () => {
     await PageLoginObject.login();
     await PageScheduledPaymentsObject.open();
-    await PageScheduledPaymentsObject.buttonFilters.click()
+    await PageScheduledPaymentsObject.buttonFilters.click();
   });
 
 

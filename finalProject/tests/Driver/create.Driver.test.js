@@ -16,11 +16,7 @@ describe ('Create NEW DRIVER.',  async () => {
     });
 
     beforeEach(async () => {
-        await PageDriversObject.open();
-        await PageDriversObject.buttonNew.click();
-        await (ModalNewDriverObject.formTitle).waitForExist({timeout: 30000});
-
-        expect(await ModalNewDriverObject.formTitle.getText()).toContain('New driver');
+        await PageDriversObject.openModalNewDriver();
     });
 
     it(`User can create New Driver with First Name and Last Name`, async () => {
@@ -28,17 +24,14 @@ describe ('Create NEW DRIVER.',  async () => {
         await ModalNewDriverObject.inputLastName.setValue(lastName);
         await ModalNewDriverObject.buttonSave.click();
 
+        expect(await ModalNewDriverObject.alertSuccess).toExist();
         expect(await ModalNewDriverObject.alertSuccess.getText()).toContain('Success');
     });
 
-    it(`User can create New Driver with Co-Driver`, async () => {
+    it(`User can create New Driver with Co-Driver`, async () => { //todo bug
         await ModalNewDriverObject.inputFirstName.setValue(firstName);
         await ModalNewDriverObject.inputLastName.setValue(lastName);
-        await ModalNewDriverObject.inputCoDriver.setValue(coDriver);
-        await browser.keys('Enter');
-        await browser.pause(3000);
-
-        expect(await ModalNewDriverObject.inputCoDriver.getProperty('placeholder')).toContain(coDriver);
+        await PageDriversObject.chooseCoDriver(coDriver);
         await ModalNewDriverObject.buttonSave.click();
 
         expect(await ModalNewDriverObject.alertSuccess.getText()).toContain('Success');
@@ -46,6 +39,6 @@ describe ('Create NEW DRIVER.',  async () => {
 
     afterEach(async () => {
         await PageDriversObject.deleteDriver(firstName, lastName);
-        await PageVendorsObject.deleteVendor(firstName, lastName);
+        await PageVendorsObject.deleteVendor(firstName, lastName); //todo bug
     });
 });

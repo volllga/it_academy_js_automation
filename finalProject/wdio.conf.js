@@ -1,6 +1,6 @@
-const TestEnv = require("./documentation/test.env");
+const TestEnv = require("./docs/test.env");
 const allure = require('allure-commandline');
-const constants = require('./documentation/constants');
+const constants = require('./docs/constants');
 
 // const (getPortalUrl()) = require('./test.env');
 // const ENV = process.env.ENV
@@ -160,7 +160,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 20000
+        timeout: 80000
     },
     //
     // =====
@@ -319,4 +319,4 @@ exports.config = {
     // onReload: function(oldSessionId, newSessionId) {
     // }
 
-}
+};
