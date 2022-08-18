@@ -8,7 +8,7 @@ describe("Login tests.", () => {
     expect(await browser.getTitle()).toContain("ezLoads.net - login");
   });
 
-  it("User can not login with Wrong email address", async () => {
+  it("User can NOT login with Wrong email address", async () => {
     await PageLoginObject.loginWithCredentials("wrongEmail", TestEnv.password);
 
     expect(await PageLoginObject.feedbackEmail.getText()).toContain(
@@ -16,7 +16,7 @@ describe("Login tests.", () => {
     );
   });
 
-  it("User can not login with Incorrect password", async () => {
+  it("User can NOT login with Incorrect password", async () => {
     await PageLoginObject.loginWithCredentials(TestEnv.userEmail, "wrongPass");
 
     expect(await PageLoginObject.feedbackPassword.getText()).toContain(
@@ -24,7 +24,7 @@ describe("Login tests.", () => {
     );
   });
 
-  it("User can not login Invalid email address and with Incorrect password", async () => {
+  it("User can NOT login with Invalid email address and with Incorrect password", async () => {
     await browser.url(PageLoginObject.portalUrl);
     await PageLoginObject.btnSingIn.click();
     await PageLoginObject.inputEmail.click();

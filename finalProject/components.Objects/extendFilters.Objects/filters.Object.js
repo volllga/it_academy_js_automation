@@ -1,19 +1,26 @@
-const ElementUtil = require('../../helpers/elementUtil');
-
 module.exports = class Filters {
-  get listFilters(){return $('.list-filters')}
-
-  get inputCategory(){return $('//*[text()=\'Category\'][1]/following::div[@class="c-select__selected-tag"][1]')}
-  get inputActive(){return $('//*[text()=\'Active\'][1]/following::input')}
-  get buttonApply(){return $('//*[@class="fa fa-check"]/ancestor::button')}
-  get badgeFilteredBy(){return $('.list-filtered-by__badge')}
-  get badgeClearAll(){return $('[title="reset filters"]')}
-  get dropdownMenu(){return $('[class="c-select__dropdown-menu"]')}
-
-
-
-  setValue(element, value) {
-    ElementUtil.doSetValue();
+  get listFilters() {
+    return $(".list-filters");
+  }
+  get inputCategory() {
+    return $(
+      "//*[text()='Category'][1]/following::div[@class=\"c-select__selected-tag\"][1]"
+    );
+  }
+  get inputActive() {
+    return $("//*[text()='Active'][1]/following::input");
+  }
+  get buttonApply() {
+    return $('//*[@class="fa fa-check"]/ancestor::button');
+  }
+  get badgeFilteredBy() {
+    return $(".list-filtered-by__badge");
+  }
+  get badgeClearAll() {
+    return $('[title="reset filters"]');
+  }
+  get dropdownMenu() {
+    return $('[class="c-select__dropdown-menu"]');
   }
 
   async sentKeys(element, value) {
@@ -21,7 +28,7 @@ module.exports = class Filters {
     await element.click();
     await browser.keys(value);
     await browser.pause(500);
-    await browser.keys('Enter');
+    await browser.keys("Enter");
   }
 
   async clearAll() {
@@ -29,5 +36,4 @@ module.exports = class Filters {
     console.log(await badgeFilteredBy.getText());
     await this.badgeClearAll.click();
   }
-}
-
+};
