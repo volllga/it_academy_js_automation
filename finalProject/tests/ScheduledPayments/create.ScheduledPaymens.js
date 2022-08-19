@@ -1,12 +1,11 @@
-const ModalScheduledPaymentObject = require("../../components.Objects/modal.Objects/modal.SheduledPayment.Object");
 const PageScheduledPaymentsObject = require("../../page.Objects/page.ScheduledPayments.Object");
 const PageLoginObject = require("../../page.Objects/page.Login.Object");
 const constants = require("../../docs/constants");
 
-const driver = ModalScheduledPaymentObject.driver;
-const vendor = ModalScheduledPaymentObject.vendor;
-const amount = ModalScheduledPaymentObject.amount;
-const deductBy = ModalScheduledPaymentObject.deductBy;
+const driver = constants.DRIVER;
+const vendor = constants.VENDOR;
+const amount = constants.AMOUNT;
+const deductBy = constants.DEDUCT_BY;
 const categoryAdd = constants.CATEGORY_ADD;
 const categoryDed = constants.CATEGORY_DEDUCT;
 const categoryLoan = constants.CATEGORY_LOAN;
@@ -22,7 +21,7 @@ describe("Creation a new Scheduled ADDITION ", async () => {
     await PageScheduledPaymentsObject.firstTableCell.waitForClickable();
     const firstTableCell = await PageScheduledPaymentsObject.firstTableCell;
     const buttonsSortDesc = await PageScheduledPaymentsObject.btnsSortDesc;
-    // get last payment ID and store it as let lastID
+    // get last payment ID and store it as lastID
     lastPaymentID = await PageScheduledPaymentsObject.getLastID(
       firstTableCell,
       buttonsSortDesc
@@ -89,6 +88,7 @@ describe("Creation a new Scheduled ADDITION ", async () => {
   });
 
   it(`User cah create new SCHEDULED ESCROW with driver, category, amount, deductBy`, async () => {
+    //todo bug
     await PageScheduledPaymentsObject.createScheduledLoanEscrow(
       driver,
       vendor,

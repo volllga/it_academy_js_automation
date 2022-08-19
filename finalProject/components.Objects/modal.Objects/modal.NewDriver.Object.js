@@ -8,7 +8,9 @@ class ModalNewDriverObject extends ModalObject {
     return $("#driver-lastname");
   }
   get inputCoDriver() {
-    return $('//*[text()="Co-Driver"]/..//input');
+    return $(
+      '//*[text()="Co-Driver"]//ancestor::div[@class="c-input-group"]//input'
+    );
   }
 }
 
