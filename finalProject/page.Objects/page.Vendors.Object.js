@@ -14,7 +14,6 @@ class PageVendorsObject extends PageObject {
         await DatatableDriversObject.btnDelete.click();
         await ModalConfirmObject.buttonDelete.click();
     }
-
 }
 
 module.exports = new PageVendorsObject();
