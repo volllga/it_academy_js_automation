@@ -24,7 +24,7 @@ describe("Scheduled Payments Page. Category filters tests.", () => {
       constants.CATEGORY_EXPENSE
     );
     const badgeText = await badgeFilter.getText();
-    await FiltersScheduledPaymentsObject.clearAll();
+    await FiltersScheduledPaymentsObject.badgeClearAll.click();
 
     expect(badgeText).toContain(constants.CATEGORY_EXPENSE);
   });
@@ -34,7 +34,7 @@ describe("Scheduled Payments Page. Category filters tests.", () => {
       constants.CATEGORY_EXPENSE_SUB
     );
     const badgeText = await badgeFilter.getText();
-    await FiltersScheduledPaymentsObject.clearAll();
+    await FiltersScheduledPaymentsObject.badgeClearAll.click();
 
     expect(badgeText).toContain(
       constants.CATEGORY_EXPENSE_SUB + "          Sub-account of Internet"
@@ -46,7 +46,7 @@ describe("Scheduled Payments Page. Category filters tests.", () => {
       constants.CATEGORY_LOAN
     );
     const badgeText = await badgeFilter.getText();
-    await FiltersScheduledPaymentsObject.clearAll();
+    await FiltersScheduledPaymentsObject.badgeClearAll.click();
 
     expect(badgeText).toContain(constants.CATEGORY_LOAN);
   });
@@ -56,7 +56,7 @@ describe("Scheduled Payments Page. Category filters tests.", () => {
       constants.CATEGORY_LOAN_SUB
     );
     const badgeText = await badgeFilter.getText();
-    await FiltersScheduledPaymentsObject.clearAll();
+    await FiltersScheduledPaymentsObject.badgeClearAll.click();
 
     expect(badgeText).toContain(
       constants.CATEGORY_LOAN_SUB + "          Sub-account of Driver loan"
@@ -68,7 +68,7 @@ describe("Scheduled Payments Page. Category filters tests.", () => {
       constants.CATEGORY_ESCROW
     );
     const badgeText = await badgeFilter.getText();
-    await FiltersScheduledPaymentsObject.clearAll();
+    await FiltersScheduledPaymentsObject.badgeClearAll.click();
 
     expect(badgeText).toContain(constants.CATEGORY_ESCROW);
   });

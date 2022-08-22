@@ -1,22 +1,4 @@
-const constants = require("../../docs/constants");
-
 module.exports = class ModalForm {
-  get driver() {
-    return constants.DRIVER;
-  }
-  get vendor() {
-    return constants.VENDOR;
-  }
-  get amount() {
-    return constants.AMOUNT;
-  }
-  get deductBy() {
-    return constants.DEDUCT_BY;
-  }
-  get category() {
-    return constants.CATEGORY;
-  }
-
   get inputDriver() {
     return $('//label[text()="Driver"]/..//input');
   }
