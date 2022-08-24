@@ -17,6 +17,9 @@ module.exports = class ModalForm {
   get alertSuccess() {
     return $('[class="c-alert c-alert--success"]');
   }
+  get btnSaveSpinner() {
+    return $(".c-button-save__spinner");
+  }
 
   async setValue(element, value) {
     await element.waitForDisplayed();
@@ -26,7 +29,7 @@ module.exports = class ModalForm {
 
   async saveAndClose() {
     await this.buttonSave.click();
-    await browser.pause(1000);
+    await this.btnSaveSpinner.waitForDisplayed({ reverse: true });
     await this.buttonClose.click();
   }
 };

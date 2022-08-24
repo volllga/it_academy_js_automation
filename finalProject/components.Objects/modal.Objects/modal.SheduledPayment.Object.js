@@ -73,27 +73,6 @@ class ModalSheduledPaymentObject extends ModalObject {
 
     return await this.selectCategory.getProperty("innerText");
   }
-  async chooseRadioAdd() {
-    const radioAdd = await this.radioAdd;
-    await radioAdd.click();
-  }
-
-  async chooseRadioDeduct() {
-    const radioDeduct = await this.radioDeduct;
-    await radioDeduct.click();
-  }
-
-  async chooseRadioLoan() {
-    const radiobuttonLoan = await this.radioLoan;
-    await radiobuttonLoan.click();
-    await this.inputDeductBy.waitForDisplayed({ timeout: 2000 });
-  }
-
-  async chooseRadioEscrow() {
-    const radiobuttonEscrow = await this.radioEscrow;
-    await radiobuttonEscrow.click();
-    await this.inputDeductBy.waitForDisplayed({ timeout: 2000 });
-  }
 }
 
 module.exports = new ModalSheduledPaymentObject();

@@ -82,9 +82,9 @@ class PageScheduledPaymentsObject extends PageObject {
 
     if (type === "addition") {
       // work only here!!! do not move!!!
-      await ModalScheduledPaymentObject.chooseRadioAdd();
+      await ModalScheduledPaymentObject.radioAdd.click();
     } else if (type === "deduction") {
-      await ModalScheduledPaymentObject.chooseRadioDeduct();
+      await ModalScheduledPaymentObject.radioDeduct.click();
     } else {
       console.log("wrong payment type");
     }
@@ -95,11 +95,6 @@ class PageScheduledPaymentsObject extends PageObject {
     const inputCategory = await ModalScheduledPaymentObject.fillInputCategory(
       category
     );
-
-    console.log(`Driver name is ${inputDriver}`);
-    console.log(`Vendor name is ${inputVendor}`);
-    console.log(`Amount is ${inputAmount}`);
-    console.log(`Category is`, await inputCategory);
 
     expect(inputDriver).toEqual(driver);
     expect(inputVendor).toEqual(vendor);
@@ -128,9 +123,9 @@ class PageScheduledPaymentsObject extends PageObject {
 
     if (type === "loan") {
       // work only here!!! do not move!!!
-      await ModalScheduledPaymentObject.chooseRadioLoan();
+      await ModalScheduledPaymentObject.radioLoan.click();
     } else if (type === "escrow") {
-      await ModalScheduledPaymentObject.chooseRadioEscrow();
+      await ModalScheduledPaymentObject.radioEscrow.click();
     } else {
       console.log("wrong payment type");
     }
@@ -144,12 +139,6 @@ class PageScheduledPaymentsObject extends PageObject {
     const inputCategory = await ModalScheduledPaymentObject.fillInputCategory(
       category
     );
-
-    console.log(`Driver name is ${inputDriver}`);
-    console.log(`Vendor name is ${inputVendor}`);
-    console.log(`Amount is ${inputAmount}`);
-    console.log(`Deduct by is ${inputDeduct}`);
-    console.log(`Category is`, await inputCategory);
 
     expect(inputDriver).toEqual(driver);
     expect(inputVendor).toEqual(vendor);

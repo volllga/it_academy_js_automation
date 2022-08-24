@@ -24,7 +24,6 @@ describe("Create NEW DRIVER.", async () => {
     await ModalNewDriverObject.inputLastName.setValue(lastName);
     await ModalNewDriverObject.buttonSave.click();
 
-    expect(await ModalNewDriverObject.alertSuccess).toExist();
     expect(await ModalNewDriverObject.alertSuccess.getText()).toContain(
       "Success"
     );
@@ -37,7 +36,6 @@ describe("Create NEW DRIVER.", async () => {
     await PageDriversObject.chooseCoDriver(coDriver);
     await ModalNewDriverObject.buttonSave.click();
 
-    expect(await ModalNewDriverObject.alertSuccess).toExist();
     expect(await ModalNewDriverObject.alertSuccess.getText()).toContain(
       "Success"
     );

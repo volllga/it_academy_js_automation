@@ -14,7 +14,7 @@ const categoryEscrow = constants.CATEGORY_ESCROW;
 let lastPaymentID;
 let newPaymentID;
 
-describe("Creation a new Scheduled ADDITION ", async () => {
+describe("Creation a new Scheduled Payment", async () => {
   before(async () => {
     await PageLoginObject.login();
     await PageScheduledPaymentsObject.open();
@@ -26,7 +26,6 @@ describe("Creation a new Scheduled ADDITION ", async () => {
       firstTableCell,
       buttonsSortDesc
     );
-    console.log(`lastID is stored before test: ${lastPaymentID}`);
   });
 
   it(`User cah create new SCHEDULED ADDITION with driver, category, amount`, async () => {
@@ -43,7 +42,6 @@ describe("Creation a new Scheduled ADDITION ", async () => {
       firstTableCell,
       buttonsSortDesc
     );
-    console.log(`newLastID is stored:`, await newPaymentID);
 
     expect(Number(newPaymentID) > Number(lastPaymentID)).toBe(true);
   });
@@ -62,7 +60,6 @@ describe("Creation a new Scheduled ADDITION ", async () => {
       firstTableCell,
       buttonsSortDesc
     );
-    console.log(`newLastID is stored:`, await newPaymentID);
 
     expect(Number(newPaymentID) > Number(lastPaymentID)).toBe(true);
   });
@@ -82,7 +79,6 @@ describe("Creation a new Scheduled ADDITION ", async () => {
       firstTableCell,
       buttonsSortDesc
     );
-    console.log(`newLastID is stored:`, await newPaymentID);
 
     expect(Number(newPaymentID) > Number(lastPaymentID)).toBe(true);
   });
@@ -103,7 +99,6 @@ describe("Creation a new Scheduled ADDITION ", async () => {
       firstTableCell,
       buttonsSortDesc
     );
-    console.log(`newLastID is stored:`, await newPaymentID);
 
     expect(Number(newPaymentID) > Number(lastPaymentID)).toBe(true);
   });
