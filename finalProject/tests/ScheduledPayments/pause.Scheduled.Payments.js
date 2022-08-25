@@ -14,10 +14,7 @@ describe("Scheduled Payments. Pause.", async () => {
 
   it(`Modal form Edit Scheduled Payment of Active Payment has button Pause and notification "Next transaction will be created on"`, async () => {
     await DataTableScheduledPaymentsObject.idActivePayment.click();
-    await ModalScheduledPaymentObject.btnPause.waitForDisplayed({
-      timeout: 2000,
-    });
-    await browser.pause(2000);
+    await browser.pause(3000);
     const next = await ModalScheduledPaymentObject.notificationNext.getText();
 
     expect(next).toContain("Next transaction will be created on");
@@ -44,10 +41,7 @@ describe("Scheduled Payments. Pause.", async () => {
       timeout: 2000,
     });
     await ModalScheduledPaymentObject.btnResume.click();
-    await ModalScheduledPaymentObject.btnPause.waitForDisplayed({
-      timeout: 2000,
-    });
-    await browser.pause(2000);
+    await browser.pause(3000);
 
     expect(
       await ModalScheduledPaymentObject.notificationNext.getText()
