@@ -3,7 +3,46 @@
 /.git
 /package-lock.json
 /.gitignore
+/build#.gitignore
+
+
+/lesson17/node_modules/
+/lesson17/package-lock.json
+/lesson17/mochawesome-report
+/webdriverio/node_modules
+/webdriverio/allure-results
+/webdriverio/allure-report
+/webdriverio/screenshots
+
+
+node_modules/
+/playwright/playwright-report
+/playwright/cred.ts
+
+
 /build
+lesson17/mochawesome-report/
+lesson17/node_modules/
+lesson17/package-lock.json
+
+playwright/cred.ts
+playwright/node_modules/
+playwright/package-lock.json
+playwright/package.json
+playwright/playwright-report/
+playwright/playwright.config.ts
+playwright/tests-examples
+playwright/videos
+
+tests-examples
+
+webdriverio/allure-results
+webdriverio/allure-report
+webdriverio/screenshots
+webdriverio/node_modules
+
+
+
 
 lesson17/mochawesome-report/
 lesson17/node_modules/
@@ -13,6 +52,7 @@ cypress/target-app/
 
 
 #.gitignore
+
 #Файл .gitignore необходимо добавить в корень проекта и в нем указать список исключений.
 
 #	Комментарий
@@ -26,3 +66,5 @@ cypress/target-app/
 #/*.a	Игнорировать все файлы, заканчивающиеся на .a в текущем каталоге
 #dir/	Игнорировать все файлы в каталоге dir/
 #/dir/	Игнорировать каталог /dir и все его содержимое
+
+

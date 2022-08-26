@@ -3,13 +3,15 @@ module.exports = {
         "browser": true,
         "commonjs": true,
         "es2021": true,
-        "jasmine": true
+        "jasmine": true,
+        "mocha": true
     },
 
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:jasmine/recommended"
+        "plugin:jasmine/recommended",
+        "plugin:wdio/recommended"
     ],
 
     "parser": "@typescript-eslint/parser",
@@ -20,10 +22,13 @@ module.exports = {
     "plugins": [
         "@typescript-eslint",
         "jasmine",
+        "chai-friendly",
+        "wdio"
     ],
 
     "rules": {
-      "semi": ["error", "always"],
-      "quotes": ["warn", "single"]
+      "semi": ["warn", "always"],
+      "quotes": ["warn", "single"],
+      '@typescript-eslint/no-var-requires': 0
     }
 }
