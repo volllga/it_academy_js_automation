@@ -44,6 +44,13 @@ webdriverio/node_modules
 
 
 
+lesson17/mochawesome-report/
+lesson17/node_modules/
+
+cypress/node_modules/
+cypress/target-app/
+
+
 #.gitignore
 
 #Файл .gitignore необходимо добавить в корень проекта и в нем указать список исключений.
